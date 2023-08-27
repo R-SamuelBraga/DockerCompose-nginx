@@ -1,0 +1,13 @@
+version: '3'
+services:
+  webserver:
+    image: nginx
+    ports:
+      - "4500:80"
+    volumes:
+      - ./meu-site/site:/usr/share/nginx/html
+    networks:
+      - minha-rede
+networks:
+   minha-rede:
+    driver: bridge
